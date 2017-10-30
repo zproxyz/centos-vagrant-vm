@@ -1,0 +1,3 @@
+# nginx logs
+site-access.log
+site-error.log
