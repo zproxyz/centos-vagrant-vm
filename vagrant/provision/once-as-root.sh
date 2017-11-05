@@ -70,6 +70,13 @@ info "Enabling site configuration"
 ln -s /app/vagrant/nginx/app.conf /etc/nginx/conf.d/app.conf
 echo "Done!"
 
+info "Configure MySQL"
+sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/my.cnf.d/mariadb-server.cnf
+mysql -u root <<< "CREATE USER 'root'@'%' IDENTIFIED BY ''"
+mysql -u root <<< "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'"
+mysql -u root <<< "FLUSH PRIVILEGES"
+echo "Done!"
+
 info "Initailize databases for MySQL"
 mysql -u root <<< "CREATE DATABASE sitedb"
 mysql -u root <<< "CREATE DATABASE sitedb_test"
