@@ -8,7 +8,7 @@ Vagrant VM based on [CentOS 7.4](https://app.vagrantup.com/centos/boxes/7/versio
 * Presetting Nginx and PHP-FPM site configs
 * Disable SELinux.
 
-## Prerequisites
+## Requirements
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads), as provider for Vagrant
     * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) plug-in to keep VirtualBox tools up-to-date.
